@@ -1,22 +1,25 @@
 //
-//  ContentView.swift
-//  MyProject
+//  LoginView.swift
+//  LoginForm
 //
-//  Created by Nursultan on 07.06.2023.
+//  Created by Nursultan on 27.06.2023.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+
+
+
+struct LoginView: View {
     
-    var colors = ["red", "white", "blue"]
     
     @State private var click = false
     @State private var selectedColor = 0
     @State private var tggl = false
     @State private var username = ""
     @State private var password = ""
-    @State private var number = ""
+    
+    
     
     var body: some View {
         
@@ -25,18 +28,18 @@ struct ContentView: View {
                 Color.blue
                     .ignoresSafeArea()
                 Circle()
-                    .scale(1.8)
+                    .scale(1.4)
                     .foregroundColor(.white).opacity(0.15)
                 
                 Circle()
-                    .scale(1.5)
+                    .scale(1.1)
                     .foregroundColor(.white)
                 
                 
                     .navigationBarHidden(true)
                 
                 VStack {
-                    Text("Registration")
+                    Text("Login")
                         .font(.largeTitle)
                         .bold()
                         .padding()
@@ -48,16 +51,7 @@ struct ContentView: View {
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
                     
-                    TextField("First name", text: $username)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
-                    TextField("Last name", text: $username)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
+            
                     
                     TextField("Password", text: $password)
                         .padding()
@@ -65,15 +59,7 @@ struct ContentView: View {
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
                     
-                    TextField("Number", text: $number)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(Color.black.opacity(0.05))
-                        .cornerRadius(10)
-                    
-                    
-                    
-                    Button("Registration") {
+                    Button("Login") {
                         
                     }
                     .foregroundColor(.white)
@@ -82,15 +68,11 @@ struct ContentView: View {
                     .cornerRadius(10)
                     .padding(.top)
                     
-                    
-                    
-                        
-                        
                     Button(action: {
                         print("Floating Button Click")
                     }, label: {
                         NavigationLink(destination: ContentView()) {
-                             Text("Do you have an account?")
+                             Text("You don't have an account?")
                          }
                     })
                     
@@ -98,12 +80,12 @@ struct ContentView: View {
             }
         }
     }
-    
-    
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
+        
+    }
+
+
+struct LoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
     }
 }
