@@ -29,17 +29,17 @@ struct SearchView: View {
         NavigationView {
             ZStack {
                 Color.blue
-                
                     .ignoresSafeArea()
+                Circle()
+                    .scale(1.4)
+                    .foregroundColor(.white).opacity(0.15)
+                
+                Circle()
+                    .scale(1.1)
+                    .foregroundColor(.white)
+                
                 
                     .navigationBarHidden(true)
-                Circle()
-                    .scale(1.8)
-                    .foregroundColor(.white).opacity(0.1)
-                
-                Circle()
-                    .scale(1.3)
-                    .foregroundColor(.white).opacity(0.2)
                 
                 
                 VStack {
@@ -55,26 +55,23 @@ struct SearchView: View {
                     TextField("Device name", text: $device)
                         .padding()
                         .frame(width: 300, height: 50)
-                        .background(Color.white)
+                        .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                        .foregroundColor(.black)
                     
                     
                     TextField("Model number", text: $model)
                         .padding()
                         .frame(width: 300, height: 50)
-                        .background(Color.white)
+                        .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                        .foregroundColor(.black)
-                        
                         
                     
                     Button("Find information") {
                         
                     }
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .frame(width: 300, height: 50)
-                    .background(Color.white)
+                    .background(Color.blue)
                     .cornerRadius(10)
                     .padding(.top)
                     
@@ -82,8 +79,7 @@ struct SearchView: View {
                         print("Floating Button Click")
                     }, label: {
                         NavigationLink(destination: ContentView()) {
-                             Text("How do you get the name of the device right?")
-                                .foregroundColor(.black)
+                             Text("How it works?")
                          }
                     })
                     
